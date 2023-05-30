@@ -30,7 +30,9 @@
  * @category   Mage
  * @package    Mage_Contacts
  * @author      Magento Core Team <core@magentocommerce.com>
+
  */
+
 class Mage_Contacts_IndexController extends Mage_Core_Controller_Front_Action
 {
 
@@ -50,13 +52,41 @@ class Mage_Contacts_IndexController extends Mage_Core_Controller_Front_Action
 
     public function indexAction()
     {
-        $this->loadLayout();
-        $this->getLayout()->getBlock('contactForm')
-            ->setFormAction( Mage::getUrl('*/*/post', array('_secure' => $this->getRequest()->isSecure())) );
+        $mage = new Mage();
+        // $version = $mage->getVersion();
+        // $versioninf = $mage->getVersionInfo();
+        // $edition = $mage->getEdition();
+        // $register = $mage->register('name','dhruv',false);
+        // echo 111;
+        // $registery = $mage->registry('name');
+        // $rootname = $mage->setroot('dhruv');
+        // $gettingRoot = $mage->getRoot();
+        // $helper = $mage->helper('app');
+        // $basedir= $mage->getBaseDir();
 
-        $this->_initLayoutMessages('customer/session');
-        $this->_initLayoutMessages('catalog/session');
-        $this->renderLayout();
+        // $storeConfi = $mage->getStoreConfig('C:\xampp\htdocs\2023\magento\magento-mirror');
+        // $url = $mage->getUrl();
+        echo "<pre>";
+        // $url = $mage->getDesign();
+        // $url = $mage->getConfig();
+        // $dispatch = $mage->dispatchEvent('name');
+        // $model = $mage->getModel('Core/Session');
+        $resource = $mage->getResourceModel('Core/Session');
+
+
+        print_r($resource);
+        // echo 111;
+
+        die();
+
+
+        // $this->loadLayout();
+        // $this->getLayout()->getBlock('contactForm')
+        //     ->setFormAction( Mage::getUrl('*/*/post', array('_secure' => $this->getRequest()->isSecure())) );
+
+        // $this->_initLayoutMessages('customer/session');
+        // $this->_initLayoutMessages('catalog/session');
+        // $this->renderLayout();
     }
 
     public function postAction()
