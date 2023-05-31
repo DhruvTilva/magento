@@ -6,12 +6,12 @@ class Ccc_Category_Block_Adminhtml_Category_Edit extends Mage_Adminhtml_Block_Wi
     {
 
         $this->_objectId   = 'category_id';
-        parent::__construct();
         $this->_blockGroup = 'category';
         $this->_controller = 'adminhtml_category';
         $this->_headerText = Mage::helper('category')->__('Manage categorys');
 
 
+        parent::__construct();
 
         if ($this->_isAllowedAction('save')) {
             $this->_updateButton('save', 'label', Mage::helper('category')->__('Save category'));
@@ -42,7 +42,7 @@ class Ccc_Category_Block_Adminhtml_Category_Edit extends Mage_Adminhtml_Block_Wi
             return Mage::helper('category')->__("Edit category '%s'", $this->escapeHtml(Mage::registry('category_edit')->getTitle()));
         }
         else {
-            return Mage::helper('category')->__('New category');
+            return Mage::helper('category')->__('New Category');
         }
     }
 
