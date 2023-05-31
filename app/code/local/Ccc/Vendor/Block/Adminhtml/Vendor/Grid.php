@@ -61,9 +61,9 @@ class Ccc_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widget
         $this->getMassactionBlock()->setFormFieldName('vendor');
 
         $this->getMassactionBlock()->addItem('delete', array(
-             'label'    => Mage::helper('vendor')->__('Delete'),
+             'label'    => Mage::helper('vendor')->__('Multiple Delete'),
              'url'      => $this->getUrl('*/*/massDelete'),
-             'confirm'  => Mage::helper('vendor')->__('Are you sure?')
+             'confirm'  => Mage::helper('vendor')->__('Are you sure about Multiple Deletion?')
         ));
         return $this;
     }
