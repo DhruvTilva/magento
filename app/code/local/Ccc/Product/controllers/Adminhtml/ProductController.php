@@ -77,7 +77,7 @@ class Ccc_Product_Adminhtml_ProductController extends Mage_Adminhtml_Controller_
         $this->loadLayout()
             ->_setActiveMenu('product/product')
             ->_addBreadcrumb(Mage::helper('product')->__('product Manager'), Mage::helper('product')->__('product Manager'))
-            ->_addBreadcrumb(Mage::helper('product')->__('Manage product'), Mage::helper('product')->__('Manage product'))
+            ->_addBreadcrumb(Mage::helper('product')->__('Manage Product'), Mage::helper('product')->__('Manage product'))
         ;
         return $this;
     }

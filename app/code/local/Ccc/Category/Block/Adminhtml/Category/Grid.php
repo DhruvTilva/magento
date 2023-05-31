@@ -22,33 +22,31 @@ class Ccc_Category_Block_Adminhtml_Category_Grid extends Mage_Adminhtml_Block_Wi
     {
         $baseUrl = $this->getUrl();
 
-        $this->addColumn('first_name', array(
-            'header'    => Mage::helper('category')->__('First Name'),
+        $this->addColumn('category_id', array(
+            'header'    => Mage::helper('category')->__('Category ID'),
             'align'     => 'left',
-            'index'     => 'first_name'
+            'index'     => 'category_id'
         ));
 
-        $this->addColumn('last_name', array(
-            'header'    => Mage::helper('category')->__('Last Name'),
+        $this->addColumn('name', array(
+            'header'    => Mage::helper('category')->__('Name'),
             'align'     => 'left',
-            'index'     => 'last_name'
+            'index'     => 'name'
         ));
 
-        $this->addColumn('email', array(
-            'header'    => Mage::helper('category')->__('Email'),
+        $this->addColumn('description', array(
+            'header'    => Mage::helper('category')->__('Description'),
             'align'     => 'left',
-            'index'     => 'email'
+            'index'     => 'description'
         ));
 
-      
-
-        $this->addColumn('mobile', array(
-            'header'    => Mage::helper('category')->__('Mobile'),
+        $this->addColumn('status', array(
+            'header'    => Mage::helper('category')->__('Status'),
             'align'     => 'left',
-            'index'     => 'mobile'
+            'index'     => 'status'
         ));
 
-        
+            
         return parent::_prepareColumns();
     }
 
@@ -58,9 +56,9 @@ class Ccc_Category_Block_Adminhtml_Category_Grid extends Mage_Adminhtml_Block_Wi
         $this->getMassactionBlock()->setFormFieldName('category');
 
         $this->getMassactionBlock()->addItem('delete', array(
-             'label'    => Mage::helper('category')->__('Delete'),
+             'label'    => Mage::helper('category')->__('Multiple Delete'),
              'url'      => $this->getUrl('*/*/massDelete'),
-             'confirm'  => Mage::helper('category')->__('Are you sure?')
+             'confirm'  => Mage::helper('category')->__('Are you sure For Multiple Delete?')
         ));
         return $this;
     }
