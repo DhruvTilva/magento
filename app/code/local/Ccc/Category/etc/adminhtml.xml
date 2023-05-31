@@ -5,7 +5,7 @@
             <sort_order>10</sort_order>
             <children>
                 <manageCategory module="category">
-                    <title>Manage categorys</title>
+                    <title>Manage Categorys</title>
             		<action>category/adminhtml_category/index</action>
                     <sort_order>10</sort_order>
                 </manageCategory>
@@ -24,7 +24,7 @@
                         <sort_order>100</sort_order>
                         <children>
                             <manageCategory template="title" >
-                                <title>Manaage Category</title>
+                                <title>Manage Category</title>
                             </manageCategory>
                         </children>
                     </category>
