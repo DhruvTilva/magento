@@ -18,9 +18,18 @@ class Ccc_Vendor_Block_Adminhtml_Vendor_Edit_Tabs extends Mage_Adminhtml_Block_W
             'content' => $this->getLayout()->createBlock('vendor/adminhtml_vendor_edit_tab_form')->toHtml(),
         ));
 
-        
+        $this->addTab('form_section_address', array(
+            'label' => Mage::helper('vendor')->__('Addresses'),
+            'content' => $this->getLayout()->createBlock('vendor/adminhtml_vendor_edit_tab_addresses')->toHtml(),
+        ));
 
 
         return parent::_beforeToHtml();
     }
 }
+
+
+
+
+
+    
