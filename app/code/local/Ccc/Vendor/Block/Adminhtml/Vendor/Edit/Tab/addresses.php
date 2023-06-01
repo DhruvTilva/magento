@@ -1,12 +1,14 @@
 <?php
 
+
+
 class Ccc_Vendor_Block_Adminhtml_Vendor_Edit_Tab_Addresses extends Mage_Adminhtml_Block_Widget_Form
 {
     protected function _prepareForm()
     {
         $form = new Varien_Data_Form();
         $this->setForm($form);
-
+        //setting the field form addresses
         $fieldset = $form->addFieldset('vendor_form',array('legend'=>Mage::helper('vendor')->__('Vendor Addresses')));
 
         $fieldset->addField('address', 'text', array(

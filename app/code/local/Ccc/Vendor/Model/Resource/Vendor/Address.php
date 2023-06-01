@@ -3,6 +3,7 @@ class Ccc_Vendor_Model_Resource_Vendor_Address extends Mage_Core_Model_Resource_
 {
     protected function _construct()
     {
+        //address resource
         $this->_init('vendor/vendor_address' ,'address_id');
     }
 }
