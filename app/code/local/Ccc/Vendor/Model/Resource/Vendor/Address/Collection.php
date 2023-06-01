@@ -4,6 +4,7 @@ class Ccc_Vendor_Model_Resource_Vendor_Address_Collection extends Mage_Core_Mode
 {
     protected function _construct()
     {
+        //address collection
         $this->_init('vendor/vendor_address');
     }
 }

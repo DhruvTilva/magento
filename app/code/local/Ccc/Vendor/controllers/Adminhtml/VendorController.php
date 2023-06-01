@@ -59,6 +59,7 @@ class Ccc_Vendor_Adminhtml_VendorController extends Mage_Adminhtml_Controller_Ac
 
         $id = $this->getRequest()->getParam('vendor_id');
         $model = Mage::getModel('vendor/vendor');
+        //getting address model also
         $addressModel = Mage::getModel('vendor/vendor_address');
 
         if ($id) {
@@ -117,7 +118,7 @@ class Ccc_Vendor_Adminhtml_VendorController extends Mage_Adminhtml_Controller_Ac
                 if ($vendorId) {
                     $addressModel->load($vendorId,'vendor_id');
                 }
-
+                //address model setting the data
                 $addressModel->setData(array_merge($addressModel->getData(),$addressData));
                 $addressModel->vendor_id = $model->vendor_id;
                 $addressModel->save();
