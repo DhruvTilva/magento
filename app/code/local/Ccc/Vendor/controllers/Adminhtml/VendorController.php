@@ -24,75 +24,46 @@
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
+
 class Ccc_Vendor_Adminhtml_VendorController extends Mage_Adminhtml_Controller_Action
 {
-    function indexAction()
+    public function indexAction()
     {
-        // $this->loadLayout();
-        // $block = $this->getLayout()->createBlock('vendor/test');
-        // $this->getLayout()->createBlock('vendor/test','test')->getBlock('content');
-        // // print_r(get_class_methods($r));
-    
-        // // print_r(get_class($block));
-
-        // $this->renderLayout();
-        // // echo $block->toHtml();
-        // echo "Controller Working...";
-        $this->_title($this->__('Vendor'))->_title($this->__('Manage Vendors'));
+        $this->_title($this->__('Vendor'))
+             ->_title($this->__('Manage Vendors'));
         $this->loadLayout();
         $this->_addContent($this->getLayout()->createBlock('vendor/adminhtml_vendor'));
         $this->renderLayout();
-
-
-
-       // $vendor = Mage::getModel('vendor/vendor');
-       // $vendor->name = "dhruv";
-       // $vendor->email = "dhruv@gmail.com";
-       // $vendor->mobile = "111";
-
-       // print_r($vendor->save());
-       // die();
-        
-
-
-
-        // $model = Mage::getModel('vendor/test');
-
-        // print_r($model);
-
-        // $helper = Mage::helper('vendor/test');
-        // print_r($helper);
-
-        // $helperData = Mage::helper('vendor/data');
-        // print_r($helperData);
-
-         
-
-         // die;
     }
 
     protected function _initAction()
     {
-        // load layout, set active menu and breadcrumbs
         $this->loadLayout()
             ->_setActiveMenu('vendor/vendor')
-            ->_addBreadcrumb(Mage::helper('vendor')->__('vendor Manager'), Mage::helper('vendor')->__('vendor Manager'))
+            ->_addBreadcrumb(Mage::helper('vendor')->__('Vendor Manager'), Mage::helper('vendor')->__('Vendor Manager'))
             ->_addBreadcrumb(Mage::helper('vendor')->__('Manage vendor'), Mage::helper('vendor')->__('Manage vendor'))
         ;
         return $this;
     }
+    
+    public function newAction()
+    {
+        $this->_forward('edit');
+    }
 
     public function editAction()
     {
-        $this->_title($this->__('vendor'))
-             ->_title($this->__('vendors'))
-             ->_title($this->__('Edit vendors'));
+        $this->_title($this->__('Vendor'))
+             ->_title($this->__('Vendors'))
+             ->_title($this->__('Edit Vendors'));
 
-        // print_r($this->_addContent($this->getLayout()->createBlock('Ccc_vendor_Block_Adminhtml_vendor_Edit')));
         $id = $this->getRequest()->getParam('vendor_id');
         $model = Mage::getModel('vendor/vendor');
+        $addressModel = Mage::getModel('vendor/vendor_address');
+
         if ($id) {
             $model->load($id);
+            $addressModel->load($id,'vendor_id');
             if (! $model->getId()) {
                 Mage::getSingleton('adminhtml/session')->addError(
                     Mage::helper('vendor')->__('This page no longer exists.'));
@@ -100,8 +71,8 @@ class Ccc_Vendor_Adminhtml_VendorController extends Mage_Adminhtml_Controller_Ac
                 return;
             }
         }
-        // echo "<pre>";print_r($model->load($id));die;
         $this->_title($model->getId() ? $model->getTitle() : $this->__('New Vendor'));
+        $this->_title($addressModel->getId() ? $addressModel->getTitle() : $this->__('New Vendor Address'));
 
         $data = Mage::getSingleton('adminhtml/session')->getFormData(true);
 
@@ -111,52 +82,27 @@ class Ccc_Vendor_Adminhtml_VendorController extends Mage_Adminhtml_Controller_Ac
         }
 
         Mage::register('vendor_edit',$model);
+        Mage::register('address_edit',$addressModel);
 
         $this->_initAction()
             ->_addBreadcrumb(
-                $id ? Mage::helper('vendor')->__('Edit vendor')
-                    : Mage::helper('vendor')->__('New vendor'),
-                $id ? Mage::helper('vendor')->__('Edit vendor')
-                    : Mage::helper('vendor')->__('New vendor'));
+                $id ? Mage::helper('vendor')->__('Edit Vendor')
+                    : Mage::helper('vendor')->__('New Vendor'),
+                $id ? Mage::helper('vendor')->__('Edit Vendor')
+                    : Mage::helper('vendor')->__('New Vendor'));
 
-        $this->_addContent($this->getLayout()->createBlock(' vendor/adminhtml_vendor_edit'))
-                ->_addLeft($this->getLayout()
-                ->createBlock('vendor/adminhtml_vendor_edit_tabs'));
+        $this->_addContent($this->getLayout()->createBlock('vendor/adminhtml_vendor_edit'))
+                ->_addLeft($this->getLayout()->createBlock('vendor/adminhtml_vendor_edit_tabs'));
 
         $this->renderLayout();
     }
 
-    public function newAction()
-    {
-        $this->_forward('edit');
-    }
-
-
     public function saveAction()
     {
         try {
-            // $model = Mage::getModel('vendor/vendor');
-            // $data = $this->getRequest()->getPost();
-            // // print_r($data); die();
-            // if (!$this->getRequest()->getParam('id'))
-            // {
-            //     $model->setData($data)->setId($this->getRequest()->getParam('vendor_id'));
-            // }
-            // // echo "<pre>";
-            // // print_r($model->setData($data));
-
-            // $model->setData($data)->setId($this->getRequest()->getParam('id'));
-            // // die();
-            // // if ($model->getCreatedTime == NULL || $model->getUpdateTime() == NULL)
-            // // {
-            // //     $model->setCreatedTime(now())->setUpdateTime(now());
-            // // } 
-            // // else {
-            // //     $model->setUpdateTime(now());
-            // // }
-            // $model->save();
-
             $model = Mage::getModel('vendor/vendor');
+            $addressModel = Mage::getModel('vendor/vendor_address');
+            $addressData = $this->getRequest()->getPost('address');
             $data = $this->getRequest()->getPost('vendor');
             $vendorId = $this->getRequest()->getParam('id');
             if (!$vendorId)
@@ -165,16 +111,18 @@ class Ccc_Vendor_Adminhtml_VendorController extends Mage_Adminhtml_Controller_Ac
             }
 
             $model->setData($data)->setId($vendorId);
-            if ($model->getCreatedTime == NULL || $model->getUpdateTime() == NULL)
-            {
-                $model->setCreatedTime(now())->setUpdateTime(now());
-            } 
-            else {
-                $model->setUpdateTime(now());
-            }
+           
             $model->save();
+            if ($model->save()) {
+                if ($vendorId) {
+                    $addressModel->load($vendorId,'vendor_id');
+                }
 
-            Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('vendor')->__('vendor was successfully saved'));
+                $addressModel->setData(array_merge($addressModel->getData(),$addressData));
+                $addressModel->vendor_id = $model->vendor_id;
+                $addressModel->save();
+            }
+            Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('vendor')->__('Vendor was successfully saved'));
             Mage::getSingleton('adminhtml/session')->setFormData(false);
              
             if ($this->getRequest()->getParam('back')) {
@@ -203,7 +151,7 @@ class Ccc_Vendor_Adminhtml_VendorController extends Mage_Adminhtml_Controller_Ac
                 $model->setId($this->getRequest()->getParam('vendor_id'))
                 ->delete();
                  
-                Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('vendor was successfully deleted'));
+                Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Vendor was successfully deleted'));
                 $this->_redirect('*/*/');
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
@@ -211,30 +159,5 @@ class Ccc_Vendor_Adminhtml_VendorController extends Mage_Adminhtml_Controller_Ac
             }
         }
         $this->_redirect('*/*/');
-    }
-
-     public function massDeleteAction()
-    {
-        $vendorIds = $this->getRequest()->getParam('vendor');
-        // print_r($vendorIds); die();
-        if(!is_array($vendorIds)) {
-             Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__('Please select vendor(s).'));
-        } else {
-            try {
-                $vendor = Mage::getModel('vendor/vendor');
-                foreach ($vendorIds as $vendorId) {
-                    $vendor->reset()
-                        ->load($vendorId)
-                        ->delete();
-                }
-                Mage::getSingleton('adminhtml/session')->addSuccess(
-                    Mage::helper('adminhtml')->__('Total of %d record(s) were deleted.', count($vendorIds))
-                );
-            } catch (Exception $e) {
-                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
-            }
-        }
-
-        $this->_redirect('*/*/index');
     }
 }

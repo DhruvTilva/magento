@@ -33,11 +33,32 @@ class Ccc_Vendor_Block_Adminhtml_Vendor_Edit_Tab_Form extends Mage_Adminhtml_Blo
             'name' => 'vendor[email]',
         ));
 
+        $fieldset->addField('gender', 'radios', array(
+            'label' => Mage::helper('vendor')->__('Gender'),
+            'name' => 'vendor[gender]',
+            'values' => array(
+                array('value' => 1, 'label' => 'Male'),
+                array('value' => 2, 'label' => 'Female'),
+                array('value' => 3, 'label' => 'Other')
+            ),
+        ));
+
+        $fieldset->addField('status', 'select', array(
+            'label' => Mage::helper('vendor')->__('Status'),
+            'required' => true,
+            'name' => 'vendor[status]',
+            'options' => array(
+                1 => Mage::helper('vendor')->__('Active'),
+                2 => Mage::helper('vendor')->__('Inactive'),
+            ),
+        ));
+
         if ( Mage::getSingleton('adminhtml/session')->getVendorData() )
         {
             $form->setValues(Mage::getSingleton('adminhtml/session')->getVendorData());
             Mage::getSingleton('adminhtml/session')->setVendorData(null);
-        } elseif ( Mage::registry('vendor_edit') ) {
+        } 
+        elseif ( Mage::registry('vendor_edit') ) {
             $form->setValues(Mage::registry('vendor_edit')->getData());
         }
         return parent::_prepareForm();
@@ -46,3 +67,9 @@ class Ccc_Vendor_Block_Adminhtml_Vendor_Edit_Tab_Form extends Mage_Adminhtml_Blo
     }
 
 }
+
+
+
+
+
+    

@@ -1,34 +1,17 @@
-<?xml version="1.0"?>
 <config>
     <modules>
-        <Ccc_Vendor>
-        <version>0.1.0</version>
+        <Ccc_Vendor>    
+            <version>1.0.1</version>
         </Ccc_Vendor>
     </modules>
     <frontend>
-        <routers>
-            <vendor>
-                <use>standard</use>
-                <args>
-                    <module>Ccc_Vendor</module>
-                    <frontName>vendor</frontName>
-                </args>
-            </vendor>
-        </routers>
-        <layout>
-            <updates>
-                <Vendor module="Ccc_Vendor">
-                    <file>Ccc_Vendor.xml</file>
-                </Vendor>
-            </updates>
-        </layout>
     </frontend>
     <global>
         <models>
             <vendor>
                 <class>Ccc_Vendor_Model</class>
                 <resourceModel>vendor_resource</resourceModel>
-            </vendor> 
+            </vendor>
             <vendor_resource>
                 <class>Ccc_Vendor_Model_Resource</class>
                 <deprecatedNode>vendor_mysql4</deprecatedNode>
@@ -36,8 +19,11 @@
                     <vendor>
                         <table>vendor</table>
                     </vendor>
+                    <vendor_address>
+                        <table>vendor_address</table>
+                    </vendor_address>
                 </entities>
-            </vendor_resource>   
+            </vendor_resource>
         </models>
         <resources>
             <vendor_setup>
@@ -63,12 +49,12 @@
         <blocks>
             <vendor>
                 <class>Ccc_Vendor_Block</class>
-            </vendor>    
+            </vendor>
         </blocks>
         <helpers>
-            <vendor>
-                <class>Ccc_Vendor_Helper</class>
-            </vendor>    
+           <vendor>
+                  <class>Ccc_vendor_Helper</class>
+            </vendor>
         </helpers>
     </global>
     <admin>
@@ -81,12 +67,12 @@
                 </args>
             </Vendor>
         </routers>
-        <layout>
+         <!-- <layout>
             <updates>
                 <vendor>
                     <file>vendor.xml</file>
                 </vendor>
             </updates>
-        </layout>
+        </layout> -->
     </admin>
-</config> 
+</config>

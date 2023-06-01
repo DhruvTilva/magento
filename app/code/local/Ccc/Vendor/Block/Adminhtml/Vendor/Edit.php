@@ -6,12 +6,12 @@ class Ccc_Vendor_Block_Adminhtml_Vendor_Edit extends Mage_Adminhtml_Block_Widget
     {
 
         $this->_objectId   = 'vendor_id';
+        parent::__construct();
         $this->_blockGroup = 'vendor';
         $this->_controller = 'adminhtml_vendor';
         $this->_headerText = Mage::helper('vendor')->__('Manage Vendors');
 
 
-        parent::__construct();
 
         if ($this->_isAllowedAction('save')) {
             $this->_updateButton('save', 'label', Mage::helper('vendor')->__('Save Vendor'));
