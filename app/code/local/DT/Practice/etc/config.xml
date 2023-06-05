@@ -1,0 +1,25 @@
+<config>
+    <modules>
+        <DT_Practice>    
+            <version>1.0.0</version>
+        </DT_Practice>
+    </modules>
+    <frontend>
+        <routers>
+            <practice>
+                <use>standard</use>
+                <args>
+                    <module>DT_Practice</module>
+                    <frontName>practice</frontName>
+                </args>
+            </practice>
+        </routers>
+   </frontend>
+    <global>
+        <helpers>
+           <practice>
+                  <class>DT_Practice_Helper</class>
+            </practice>
+        </helpers>
+    </global>
+</config>
