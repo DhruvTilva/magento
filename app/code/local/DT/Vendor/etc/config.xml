@@ -1,7 +1,7 @@
 <config>
     <modules>
         <DT_Vendor>    
-            <version>1.0.1</version>
+            <version>1.0.2</version>
         </DT_Vendor>
     </modules>
     <frontend>
