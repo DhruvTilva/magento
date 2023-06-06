@@ -19,8 +19,11 @@ class DT_Practice_OneController extends Mage_Core_Controller_Front_Action
         // print_r(get_class_methods($textList));
         // print_r($textList->getSortedChildren());
 
-        $abstract = new Mage_Core_Block_Abstract();
-         print_r(get_class($abstract));  
+        // $abstract = new Mage_Core_Block_Abstract();
+        //  print_r(get_class($abstract));
+
+
+          
 
   
 
