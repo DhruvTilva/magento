@@ -9,6 +9,7 @@ class DT_Product_Block_Adminhtml_Product extends Mage_Adminhtml_Block_Widget_Gri
         $this->_blockGroup = 'product';
         $this->_controller = 'adminhtml_product';
         $this->_headerText = Mage::helper('product')->__('Manage Products');
+        $this->_headerText = Mage::helper('product')->__('Manage Attribute');
 
         parent::__construct();
 

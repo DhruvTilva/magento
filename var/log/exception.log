@@ -1,0 +1,80 @@
+2023-06-06T10:10:19+00:00 ERR (3): 
+Mage_Core_Exception: Invalid block type: DT_Brand_Block_Adminhtml_Brand_Grid in C:\xampp\htdocs\2023\magento\magento-mirror\app\Mage.php:598
+Stack trace:
+#0 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(495): Mage::throwException('Invalid block t...')
+#1 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('DT_Brand_Block_...', Array)
+#2 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Adminhtml\Block\Widget\Grid\Container.php(66): Mage_Core_Model_Layout->createBlock('brand/adminhtml...', 'adminhtml_brand...')
+#3 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Block\Abstract.php(297): Mage_Adminhtml_Block_Widget_Grid_Container->_prepareLayout()
+#4 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(456): Mage_Core_Block_Abstract->setLayout(Object(Mage_Core_Model_Layout))
+#5 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\local\DT\Brand\controllers\Adminhtml\BrandController.php(41): Mage_Core_Model_Layout->createBlock('brand/adminhtml...')
+#6 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Action.php(418): DT_Brand_Adminhtml_BrandController->indexAction()
+#7 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#8 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#9 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\App.php(381): Mage_Core_Controller_Varien_Front->dispatch()
+#10 C:\xampp\htdocs\2023\magento\magento-mirror\app\Mage.php(686): Mage_Core_Model_App->run(Array)
+#11 C:\xampp\htdocs\2023\magento\magento-mirror\index.php(83): Mage::run('', 'store')
+#12 {main}
+2023-06-06T10:10:34+00:00 ERR (3): 
+Mage_Core_Exception: Invalid block type: DT_Brand_Block_Adminhtml_Brand_Grid in C:\xampp\htdocs\2023\magento\magento-mirror\app\Mage.php:598
+Stack trace:
+#0 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(495): Mage::throwException('Invalid block t...')
+#1 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('DT_Brand_Block_...', Array)
+#2 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Adminhtml\Block\Widget\Grid\Container.php(66): Mage_Core_Model_Layout->createBlock('brand/adminhtml...', 'adminhtml_brand...')
+#3 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Block\Abstract.php(297): Mage_Adminhtml_Block_Widget_Grid_Container->_prepareLayout()
+#4 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(456): Mage_Core_Block_Abstract->setLayout(Object(Mage_Core_Model_Layout))
+#5 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\local\DT\Brand\controllers\Adminhtml\BrandController.php(41): Mage_Core_Model_Layout->createBlock('brand/adminhtml...')
+#6 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Action.php(418): DT_Brand_Adminhtml_BrandController->indexAction()
+#7 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#8 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#9 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\App.php(381): Mage_Core_Controller_Varien_Front->dispatch()
+#10 C:\xampp\htdocs\2023\magento\magento-mirror\app\Mage.php(686): Mage_Core_Model_App->run(Array)
+#11 C:\xampp\htdocs\2023\magento\magento-mirror\index.php(83): Mage::run('', 'store')
+#12 {main}
+2023-06-06T10:11:02+00:00 ERR (3): 
+Mage_Core_Exception: Invalid block type: DT_Brand_Block_Adminhtml_Brand_Grid in C:\xampp\htdocs\2023\magento\magento-mirror\app\Mage.php:598
+Stack trace:
+#0 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(495): Mage::throwException('Invalid block t...')
+#1 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('DT_Brand_Block_...', Array)
+#2 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Adminhtml\Block\Widget\Grid\Container.php(66): Mage_Core_Model_Layout->createBlock('brand/adminhtml...', 'adminhtml_brand...')
+#3 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Block\Abstract.php(297): Mage_Adminhtml_Block_Widget_Grid_Container->_prepareLayout()
+#4 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(456): Mage_Core_Block_Abstract->setLayout(Object(Mage_Core_Model_Layout))
+#5 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\local\DT\Brand\controllers\Adminhtml\BrandController.php(41): Mage_Core_Model_Layout->createBlock('brand/adminhtml...')
+#6 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Action.php(418): DT_Brand_Adminhtml_BrandController->indexAction()
+#7 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#8 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#9 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\App.php(381): Mage_Core_Controller_Varien_Front->dispatch()
+#10 C:\xampp\htdocs\2023\magento\magento-mirror\app\Mage.php(686): Mage_Core_Model_App->run(Array)
+#11 C:\xampp\htdocs\2023\magento\magento-mirror\index.php(83): Mage::run('', 'store')
+#12 {main}
+2023-06-06T10:11:22+00:00 ERR (3): 
+Mage_Core_Exception: Invalid block type: DT_Brand_Block_Adminhtml_Brand_Grid in C:\xampp\htdocs\2023\magento\magento-mirror\app\Mage.php:598
+Stack trace:
+#0 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(495): Mage::throwException('Invalid block t...')
+#1 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('DT_Brand_Block_...', Array)
+#2 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Adminhtml\Block\Widget\Grid\Container.php(66): Mage_Core_Model_Layout->createBlock('brand/adminhtml...', 'adminhtml_brand...')
+#3 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Block\Abstract.php(297): Mage_Adminhtml_Block_Widget_Grid_Container->_prepareLayout()
+#4 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(456): Mage_Core_Block_Abstract->setLayout(Object(Mage_Core_Model_Layout))
+#5 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\local\DT\Brand\controllers\Adminhtml\BrandController.php(41): Mage_Core_Model_Layout->createBlock('brand/adminhtml...')
+#6 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Action.php(418): DT_Brand_Adminhtml_BrandController->indexAction()
+#7 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#8 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#9 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\App.php(381): Mage_Core_Controller_Varien_Front->dispatch()
+#10 C:\xampp\htdocs\2023\magento\magento-mirror\app\Mage.php(686): Mage_Core_Model_App->run(Array)
+#11 C:\xampp\htdocs\2023\magento\magento-mirror\index.php(83): Mage::run('', 'store')
+#12 {main}
+2023-06-06T10:11:59+00:00 ERR (3): 
+Mage_Core_Exception: Invalid block type: DT_Brand_Block_Adminhtml_Brand_Grid in C:\xampp\htdocs\2023\magento\magento-mirror\app\Mage.php:598
+Stack trace:
+#0 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(495): Mage::throwException('Invalid block t...')
+#1 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('DT_Brand_Block_...', Array)
+#2 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Adminhtml\Block\Widget\Grid\Container.php(66): Mage_Core_Model_Layout->createBlock('brand/adminhtml...', 'adminhtml_brand...')
+#3 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Block\Abstract.php(297): Mage_Adminhtml_Block_Widget_Grid_Container->_prepareLayout()
+#4 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\Layout.php(456): Mage_Core_Block_Abstract->setLayout(Object(Mage_Core_Model_Layout))
+#5 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\local\DT\Brand\controllers\Adminhtml\BrandController.php(41): Mage_Core_Model_Layout->createBlock('brand/adminhtml...')
+#6 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Action.php(418): DT_Brand_Adminhtml_BrandController->indexAction()
+#7 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#8 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#9 C:\xampp\htdocs\2023\magento\magento-mirror\app\code\core\Mage\Core\Model\App.php(381): Mage_Core_Controller_Varien_Front->dispatch()
+#10 C:\xampp\htdocs\2023\magento\magento-mirror\app\Mage.php(686): Mage_Core_Model_App->run(Array)
+#11 C:\xampp\htdocs\2023\magento\magento-mirror\index.php(83): Mage::run('', 'store')
+#12 {main}
