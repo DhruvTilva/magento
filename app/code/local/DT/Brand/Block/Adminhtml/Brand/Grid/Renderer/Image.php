@@ -6,6 +6,6 @@ class DT_Brand_Block_Adminhtml_Brand_Grid_Renderer_Image extends Mage_Adminhtml_
         $imagePath = $row->getImage();
         $imageUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $imagePath;
         
-        return '<img src="' . $imageUrl . '" width="50" height="50" />';
+        return '<img src="' . $imageUrl . '" width="155" height="125" />';
     }
 }
