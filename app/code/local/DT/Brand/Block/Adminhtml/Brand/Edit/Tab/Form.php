@@ -22,11 +22,39 @@ class DT_Brand_Block_Adminhtml_Brand_Edit_Tab_Form extends Mage_Adminhtml_Block_
             'name' => 'image',
         ));
 
+        $fieldset->addField('banner', 'image', array(
+            'label' => Mage::helper('brand')->__('Banner Image'),
+            'class' => 'required-entry',
+            'required' => true,
+            'name' => 'banner',
+        ));
+
+         $fieldset->addField('url_key', 'text', array(
+            'label' => Mage::helper('brand')->__('Url Key'),
+            'required' => true,
+            'name' => 'brand[url_key]',
+        ));
+
+         $fieldset->addField('status', 'select', array(
+            'label' => Mage::helper('brand')->__('Status'),
+            'required' => true,
+            'name' => 'brand[status]',
+            'options' => array(1=>'Active',0=>'Inactive'),
+        ));
+
+         $fieldset->addField('sort_order', 'text', array(
+            'label' => Mage::helper('brand')->__('Sort Order'),
+            'required' => true,
+            'name' => 'brand[sort_order]',
+        ));
+
         $fieldset->addField('description', 'text', array(
             'label' => Mage::helper('brand')->__('Description'),
             'required' => true,
             'name' => 'brand[description]',
         ));
+
+
 
         if ( Mage::getSingleton('adminhtml/session')->getBrandData() )
         {

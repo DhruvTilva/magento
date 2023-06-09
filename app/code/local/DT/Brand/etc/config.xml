@@ -1,12 +1,38 @@
 <config>
     <modules>
         <DT_Brand>    
-            <version>1.0.1</version>
+            <version>1.0.2</version>
         </DT_Brand>
     </modules>
-    <frontend>   
+    <frontend> 
+      <routers>
+            <brand>
+                <use>standard</use>
+                <args>
+                    <module>DT_Brand</module>
+                    <frontName>brand</frontName>
+                </args>
+            </brand>
+        </routers>
+        <layout>
+            <updates>
+                <brand>
+                    <file>brand.xml</file>
+                </brand>
+            </updates>
+        </layout>
     </frontend>
     <global>
+        <events>
+            <brand_save_after>
+                <observers>
+                    <dt_brand_generate_brand_rewrite_url>
+                        <class>DT_Brand_Model_Observer</class>
+                        <method>generateRewriteUrl</method>
+                    </dt_brand_generate_brand_rewrite_url>
+                </observers>
+            </brand_save_after>
+        </events>
         <models>
             <brand>
                 <class>DT_Brand_Model</class>

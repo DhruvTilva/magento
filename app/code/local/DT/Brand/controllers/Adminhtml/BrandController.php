@@ -103,11 +103,7 @@ class DT_Brand_Adminhtml_BrandController extends Mage_Adminhtml_Controller_Actio
     {
         try {
             $model = Mage::getModel('brand/brand');
-            $addressData = $this->getRequest()->getPost('address');
             $data = $this->getRequest()->getPost('brand');
-
-            // echo "<pre>";
-            // print_r($_FILES);die;
 
             $brandId = $this->getRequest()->getParam('id');
             if (!$brandId)
@@ -148,7 +144,32 @@ class DT_Brand_Adminhtml_BrandController extends Mage_Adminhtml_Controller_Actio
                 }
             }
 
-            
+            if (isset($_FILES['banner']['name']) && ($_FILES['banner']['name'] != '')) 
+            {
+                try {
+                    // echo 111; die();
+                    $uploader = new Varien_File_Uploader('banner');
+                    // print_r($uploader); die();
+                    $uploader->setAllowedExtensions(array('jpg', 'jpeg', 'gif', 'png', 'webp'));
+                    $uploader->setAllowRenameFiles(false);
+                    $uploader->setFilesDispersion(false);
+                    
+                    $path = Mage::getBaseDir('media') . DS . 'brand' . DS . 'banner' . DS;
+                    $extension = pathinfo($_FILES['banner']['name'], PATHINFO_EXTENSION);
+                   // echo  $model->getId(); die();
+                    if ($uploader->save($path, $model->getId().'.'.$extension)) {
+                        // echo 111; die;
+                        $model->banner_image = "brand/banner/".$model->getId().".".$extension;
+                        $model->save();
+                        Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('brand')->__('Banner Image was successfully uploaded'));
+                    }
+                } catch (Exception $e) {
+                    Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+                }
+            }
+
+            Mage::dispatchEvent('brand_save_after', array('brand' => $model));
+
             Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('brand')->__('Brand was successfully saved'));
             Mage::getSingleton('adminhtml/session')->setFormData(false);
              

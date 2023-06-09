@@ -11,6 +11,7 @@ $installer->addAttribute(4, 'brand', array(
     'input'                       => 'select',
     'label'                       => 'Brand',
     'class'                       => '',
+    'source'                      => 'DT_Brand_Model_Source_Model',
     'sort_order'                  => '100',
     'required'                    => 0,
     'visible'                     => 1,

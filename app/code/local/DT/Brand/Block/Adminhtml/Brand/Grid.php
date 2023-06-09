@@ -41,6 +41,13 @@ class DT_Brand_Block_Adminhtml_Brand_Grid extends Mage_Adminhtml_Block_Widget_Gr
             'renderer' => 'brand/adminhtml_brand_grid_renderer_image',
         ));
 
+        $this->addColumn('banner_image', array(
+            'header'    => Mage::helper('brand')->__(' Banner Image'),
+            'align'     => 'center',
+            'index'     => 'image',
+            'renderer' => 'DT_Brand_Block_Adminhtml_Brand_Grid_Renderer_Banner',
+        ));
+
         $this->addColumn('description', array(
             'header'    => Mage::helper('brand')->__('Description'),
             'align'     => 'left',
