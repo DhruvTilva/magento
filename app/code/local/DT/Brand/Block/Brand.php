@@ -1,5 +1,5 @@
 <?php
-
+// echo 111; die();
 class DT_Brand_Block_Brand extends Mage_Core_Block_Template
 {
     public function __construct()
@@ -10,8 +10,10 @@ class DT_Brand_Block_Brand extends Mage_Core_Block_Template
     public function getBrands()
     {
         $brands = Mage::getModel('brand/brand')->getCollection();
+        // echo "<pre>";
         $brands->addFieldToFilter('status',1);
         $brands->setOrder('sort_order','ASC');
+        // print_r($brands); die();
         return $brands;
     }
 

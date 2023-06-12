@@ -12,10 +12,9 @@
     <brand_frontend_view>
         <default>
             <remove name="right"/>
-            <remove name="left"/>
         </default>
         <reference name="content">
-            <block type="brand/brand" name="brand_banner" template="brand/brand.phtml" />
+            <block type="brand/brand" name="brand_banner2" template="brand/brand.phtml" />
         </reference>
     </brand_frontend_view>
 </layout>
