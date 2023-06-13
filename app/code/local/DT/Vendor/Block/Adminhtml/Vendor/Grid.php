@@ -25,22 +25,10 @@ class DT_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widget_
     {
         $baseUrl = $this->getUrl();
 
-        $this->addColumn('first_name', array(
-            'header'    => Mage::helper('vendor')->__('First Name'),
+        $this->addColumn('name', array(
+            'header'    => Mage::helper('vendor')->__('Name'),
             'align'     => 'left',
-            'index'     => 'first_name',
-        ));
-
-        $this->addColumn('last_name', array(
-            'header'    => Mage::helper('vendor')->__('Last Name'),
-            'align'     => 'left',
-            'index'     => 'last_name'
-        ));
-
-        $this->addColumn('mobile', array(
-            'header'    => Mage::helper('vendor')->__('mobile'),
-            'align'     => 'left',
-            'index'     => 'mobile'
+            'index'     => 'name',
         ));
 
         $this->addColumn('email', array(
@@ -49,18 +37,36 @@ class DT_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widget_
             'index'     => 'email'
         ));
 
-        $this->addColumn('gender', array(
-            'header'    => Mage::helper('vendor')->__('Gender'),
+        $this->addColumn('password', array(
+            'header'    => Mage::helper('vendor')->__('Password'),
             'align'     => 'left',
-            'index'     => 'gender',
-           
+            'index'     => 'password'
+        ));
 
+        $this->addColumn('mobile', array(
+            'header'    => Mage::helper('vendor')->__('Mobile'),
+            'align'     => 'left',
+            'index'     => 'mobile'
         ));
 
         $this->addColumn('status', array(
             'header'    => Mage::helper('vendor')->__('Status'),
             'align'     => 'left',
             'index'     => 'status',
+           
+
+        ));
+
+        $this->addColumn('created_at', array(
+            'header'    => Mage::helper('vendor')->__('Created At'),
+            'align'     => 'left',
+            'index'     => 'created_at',
+        ));
+
+        $this->addColumn('updated_at', array(
+            'header'    => Mage::helper('vendor')->__('Updated At'),
+            'align'     => 'left',
+            'index'     => 'updated_at',
         ));
 
         return parent::_prepareColumns();
