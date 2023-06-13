@@ -15,7 +15,9 @@ CREATE TABLE {$this->getTable('vendor_address')} (
   `city` varchar(50) NOT NULL,
   `state` varchar(50) NOT NULL,
   `country` varchar(50) NOT NULL,
-  `zipcode` int(10) NOT NULL
+  `zipcode` int(10) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
   ALTER TABLE {$this->getTable('vendor_address')}
