@@ -24,7 +24,7 @@ class DT_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widget_
     protected function _prepareColumns()
     {
         $baseUrl = $this->getUrl();
-
+        // setted all columns
         $this->addColumn('name', array(
             'header'    => Mage::helper('vendor')->__('Name'),
             'align'     => 'left',

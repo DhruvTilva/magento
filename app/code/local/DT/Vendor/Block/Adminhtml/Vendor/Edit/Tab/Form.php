@@ -14,13 +14,14 @@ class DT_Vendor_Block_Adminhtml_Vendor_Edit_Tab_Form extends Mage_Adminhtml_Bloc
             'required' => true,
             'name' => 'vendor[name]',
         ));
-
+        // added mail
         $fieldset->addField('email','text', array(
             'label' => Mage::helper('vendor')->__('Email'),
             'required' => true,
             'name' => 'vendor[email]'
         ));
 
+        //added md5 pwd
         $fieldset->addField('password','text', array(
             'label' => Mage::helper('vendor')->__('Password'),
             'required' => true,
