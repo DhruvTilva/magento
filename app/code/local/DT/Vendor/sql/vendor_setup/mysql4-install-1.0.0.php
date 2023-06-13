@@ -5,7 +5,7 @@
 $installer = $this;
 
 $installer->startSetup();
-
+// added columns
 $installer->run("
 
 DROP TABLE IF EXISTS {$this->getTable('vendor')};
