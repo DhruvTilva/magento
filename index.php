@@ -23,7 +23,6 @@
  * @copyright  Copyright (c) 2006-2020 Magento, Inc. (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-
 if (version_compare(phpversion(), '5.3.0', '<')===true) {
     echo  '<div style="font:12px/1.35em arial, helvetica, sans-serif;">
 <div style="margin:0 0 25px 0; border-bottom:1px solid #ccc;">
@@ -34,6 +33,8 @@ Whoops, it looks like you have an invalid PHP version.</h3></div><p>Magento supp
     exit;
 }
 
+error_reporting(E_ALL ^ E_DEPRECATED);
+    ini_set('display_errors', 1);
 /**
  * Compilation includes configuration file
  */
@@ -80,4 +81,5 @@ $mageRunCode = isset($_SERVER['MAGE_RUN_CODE']) ? $_SERVER['MAGE_RUN_CODE'] : ''
 /* Run store or run website */
 $mageRunType = isset($_SERVER['MAGE_RUN_TYPE']) ? $_SERVER['MAGE_RUN_TYPE'] : 'store';
 
+//echo 111;
 Mage::run($mageRunCode, $mageRunType);

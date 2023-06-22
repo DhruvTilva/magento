@@ -35,6 +35,7 @@ class DT_Brand_Adminhtml_BrandController extends Mage_Adminhtml_Controller_Actio
 {
     public function indexAction()
     {
+        // echo "string"; die();
         $this->_title($this->__('Brand'))
              ->_title($this->__('Manage Brands'));
         $this->loadLayout();
@@ -55,6 +56,7 @@ class DT_Brand_Adminhtml_BrandController extends Mage_Adminhtml_Controller_Actio
     public function newAction()
     {
         $this->_forward('edit');
+        
     }
 
     public function editAction()
@@ -62,6 +64,7 @@ class DT_Brand_Adminhtml_BrandController extends Mage_Adminhtml_Controller_Actio
         $this->_title($this->__('Brand'))
              ->_title($this->__('Brands'))
              ->_title($this->__('Edit Brands'));
+     
 
         $id = $this->getRequest()->getParam('brand_id');
         $model = Mage::getModel('brand/brand');
@@ -73,6 +76,8 @@ class DT_Brand_Adminhtml_BrandController extends Mage_Adminhtml_Controller_Actio
                     Mage::helper('brand')->__('This page no longer exists.'));
                 $this->_redirect('*/*/');
                 return;
+        //         echo "<pre>";
+        // print_r($model); die();
             }
         }
         $this->_title($model->getId() ? $model->getTitle() : $this->__('New Brand'));

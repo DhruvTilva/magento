@@ -23,6 +23,7 @@
         </layout>
     </frontend>
     <global>
+        <acl></acl>
         <events>
             <brand_save_after>
                 <observers>

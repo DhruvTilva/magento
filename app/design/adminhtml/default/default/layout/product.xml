@@ -13,7 +13,7 @@
 
         <reference name="content">
             <action method="setTemplate"><template>page/3column.phtml</template></action>
-            <block type="product/adminhtml_product" name="adminhtmlProduct">
+            <!-- <block type="product/adminhtml_product" name="adminhtmlProduct"> -->
 
                 <!-- <block type="user/user_index_view_top" name="user.index.view"> -->
             <!-- </block> -->
