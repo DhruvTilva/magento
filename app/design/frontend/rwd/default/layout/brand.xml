@@ -6,7 +6,6 @@
             <block type="brand/brand" name="default_home_page1" template="brand/banner.phtml"/>
             <remove name="footer"/>
             <remove name="right"/>
-
         </reference>
     </cms_index_index>
     <brand_frontend_view>

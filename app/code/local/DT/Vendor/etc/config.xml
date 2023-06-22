@@ -5,6 +5,52 @@
         </DT_Vendor>
     </modules>
     <frontend>
+        <secure_url>
+            <vendor>/vendor/</vendor>
+        </secure_url>
+        <events>
+            <!-- <controller_action_layout_load_before>
+                <observers>
+                    <vendor_is_logged_in_observer>
+                        <class>vendor/observer</class>
+                        <method>beforeLoadLayout</method>
+                    </vendor_is_logged_in_observer>
+                </observers>
+            </controller_action_layout_load_before> -->
+            <sales_model_service_quote_submit_after>
+                <observers>
+                    <restore_vendor_group_id>
+                        <class>vendor/observer</class>
+                        <method>quoteSubmitAfter</method>
+                    </restore_vendor_group_id>
+                </observers>
+            </sales_model_service_quote_submit_after>
+        </events>
+         <routers>
+            <vendor>
+                <use>standard</use>
+                <args>
+                    <module>DT_Vendor</module>
+                    <frontName>vendor</frontName>
+                </args>
+            </vendor>
+        </routers> 
+        <translate>
+            <modules>
+                <DT_Vendor>
+                    <files>
+                        <default>DT_Vendor.csv</default>
+                    </files>
+                </DT_Vendor>
+            </modules>
+        </translate> 
+         <layout>
+            <updates>
+                <vendor module="DT_Vendor">
+                    <file>vendor.xml</file>
+                </vendor>
+            </updates>
+        </layout> 
     </frontend>
     <global>
         <models>
@@ -45,19 +91,19 @@
                     <use>core_read</use>
                 </connection>
             </vendor_read>
-        </resources>
-        <blocks>
+        </resources> -->
+       <blocks>
             <vendor>
                 <class>DT_Vendor_Block</class>
             </vendor>
-        </blocks>
+        </blocks> -->
         <helpers>
            <vendor>
                   <class>DT_vendor_Helper</class>
             </vendor>
-        </helpers>
+        </helpers> 
     </global>
-    <admin>
+   <admin>
         <routers>
             <Vendor>
                 <use>admin</use>
@@ -67,12 +113,12 @@
                 </args>
             </Vendor>
         </routers>
-         <!-- <layout>
+         <layout>
             <updates>
                 <vendor>
                     <file>vendor.xml</file>
                 </vendor>
             </updates>
-        </layout> -->
-    </admin>
+        </layout> 
+    </admin> 
 </config>
